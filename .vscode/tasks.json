@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/TrackMyApplication.csproj",
+                "${workspaceFolder}/HireMe.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/TrackMyApplication.csproj",
+                "${workspaceFolder}/HireMe.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/TrackMyApplication.csproj"
+                "${workspaceFolder}/HireMe.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

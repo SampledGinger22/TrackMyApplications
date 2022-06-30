@@ -710,11 +710,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\admin\\PRIVATE DEV PROJECTS\\TrackMyApplication\\TrackMyApplication.csproj",
-      "projectName": "TrackMyApplication",
-      "projectPath": "C:\\Users\\admin\\PRIVATE DEV PROJECTS\\TrackMyApplication\\TrackMyApplication.csproj",
+      "projectUniqueName": "C:\\Users\\admin\\TrackMyApplications\\HireMe.csproj",
+      "projectName": "HireMe",
+      "projectPath": "C:\\Users\\admin\\TrackMyApplications\\HireMe.csproj",
       "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\admin\\PRIVATE DEV PROJECTS\\TrackMyApplication\\obj\\",
+      "outputPath": "C:\\Users\\admin\\TrackMyApplications\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config"

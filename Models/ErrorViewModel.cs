@@ -1,4 +1,4 @@
-namespace TrackMyApplication.Models;
+namespace HireMe.Models;
 
 public class ErrorViewModel
 {

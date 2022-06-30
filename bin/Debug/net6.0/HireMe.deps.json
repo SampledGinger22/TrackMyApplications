@@ -6,13 +6,13 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "TrackMyApplication/1.0.0": {
+      "HireMe/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Design": "6.0.3",
           "Pomelo.EntityFrameworkCore.MySql": "6.0.1"
         },
         "runtime": {
-          "TrackMyApplication.dll": {}
+          "HireMe.dll": {}
         }
       },
       "Humanizer.Core/2.8.26": {
@@ -161,7 +161,7 @@
     }
   },
   "libraries": {
-    "TrackMyApplication/1.0.0": {
+    "HireMe/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

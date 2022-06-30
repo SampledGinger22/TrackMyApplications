@@ -10,8 +10,10 @@
     <div class="content_body flex-row justify-content-between" style="gap: 20px;">
         <div class="d-flex flex-column justify-content-top">
             <label asp-for="BusinessName">Business Name:</label>
+            <span asp-validation-for="BusinessName"></span>
             <input class="form-control" type="text" asp-for="BusinessName"><br>
             <label asp-for="JobTitle">Job Title:</label>
+            <span asp-validation-for="JobTitle"></span>
             <input class="form-control" asp-for="JobTitle" type="text"><br>
             <label asp-for="JobURL">Job Listing URL:</label>
             <div class="input-group">

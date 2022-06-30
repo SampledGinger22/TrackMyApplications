@@ -8,93 +8,93 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = HireMe
 build_property.RootNamespace = HireMe
-build_property.ProjectDir = c:\Users\admin\TrackMyApplications\
+build_property.ProjectDir = C:\Users\admin\TrackMyApplications\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\admin\TrackMyApplications
+build_property.MSBuildProjectDirectory = C:\Users\admin\TrackMyApplications
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/Users/admin/TrackMyApplications/Views/Home/Archive.cshtml]
+[C:/Users/admin/TrackMyApplications/Views/Home/Archive.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBcmNoaXZlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/admin/TrackMyApplications/Views/Home/Dashboard.cshtml]
+[C:/Users/admin/TrackMyApplications/Views/Home/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/admin/TrackMyApplications/Views/Home/EditInterview.cshtml]
+[C:/Users/admin/TrackMyApplications/Views/Home/EditInterview.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0SW50ZXJ2aWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/admin/TrackMyApplications/Views/Home/Interviews.cshtml]
+[C:/Users/admin/TrackMyApplications/Views/Home/Interviews.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbnRlcnZpZXdzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/admin/TrackMyApplications/Views/Home/NewApp.cshtml]
+[C:/Users/admin/TrackMyApplications/Views/Home/NewApp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOZXdBcHAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/admin/TrackMyApplications/Views/Home/UpdateApp.cshtml]
+[C:/Users/admin/TrackMyApplications/Views/Home/UpdateApp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVcGRhdGVBcHAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/admin/TrackMyApplications/Views/Home/ViewApp.cshtml]
+[C:/Users/admin/TrackMyApplications/Views/Home/ViewApp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWaWV3QXBwLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/admin/TrackMyApplications/Views/Login/LoginandReg.cshtml]
+[C:/Users/admin/TrackMyApplications/Views/Login/LoginandReg.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW5hbmRSZWcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/admin/TrackMyApplications/Views/Shared/Error.cshtml]
+[C:/Users/admin/TrackMyApplications/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/admin/TrackMyApplications/Views/Shared/_appDeletionWarning.cshtml]
+[C:/Users/admin/TrackMyApplications/Views/Shared/_appDeletionWarning.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9hcHBEZWxldGlvbldhcm5pbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/admin/TrackMyApplications/Views/Shared/_editInt.cshtml]
+[C:/Users/admin/TrackMyApplications/Views/Shared/_editInt.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9lZGl0SW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/admin/TrackMyApplications/Views/Shared/_intForm.cshtml]
+[C:/Users/admin/TrackMyApplications/Views/Shared/_intForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9pbnRGb3JtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/admin/TrackMyApplications/Views/Shared/_login.cshtml]
+[C:/Users/admin/TrackMyApplications/Views/Shared/_login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9sb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/admin/TrackMyApplications/Views/Shared/_nextInt.cshtml]
+[C:/Users/admin/TrackMyApplications/Views/Shared/_nextInt.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9uZXh0SW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/admin/TrackMyApplications/Views/Shared/_pastInts.cshtml]
+[C:/Users/admin/TrackMyApplications/Views/Shared/_pastInts.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9wYXN0SW50cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/admin/TrackMyApplications/Views/Shared/_registration.cshtml]
+[C:/Users/admin/TrackMyApplications/Views/Shared/_registration.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9yZWdpc3RyYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/admin/TrackMyApplications/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/admin/TrackMyApplications/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/admin/TrackMyApplications/Views/Shared/_viewApp.cshtml]
+[C:/Users/admin/TrackMyApplications/Views/Shared/_viewApp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF92aWV3QXBwLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/admin/TrackMyApplications/Views/_ViewImports.cshtml]
+[C:/Users/admin/TrackMyApplications/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/admin/TrackMyApplications/Views/_ViewStart.cshtml]
+[C:/Users/admin/TrackMyApplications/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/admin/TrackMyApplications/Views/Shared/_Layout.cshtml]
+[C:/Users/admin/TrackMyApplications/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-px0035v54b

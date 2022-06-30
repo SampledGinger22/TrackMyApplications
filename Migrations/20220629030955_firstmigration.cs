@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace TrackMyApplication.Migrations
+namespace HireMe.Migrations
 {
     public partial class firstmigration : Migration
     {

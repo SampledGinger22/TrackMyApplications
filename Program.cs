@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Http;
-using TrackMyApplication.Models;
+using HireMe.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

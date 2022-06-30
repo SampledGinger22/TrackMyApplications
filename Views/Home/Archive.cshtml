@@ -4,6 +4,15 @@
 @model List<Application>
 <div class="content_body">
     <h1 style="margin-bottom: 30px;">Archived Applications</h1>
+    <form class="form-group mt-0" asp-controller="Home" asp-action="Archive" method="get">
+    <p>
+        <div class="d-flex flex-row gap-2">
+            <input style="width: 35%;" type="search" class="form-control" placeholder="Search by Business Name" value="@ViewData["GetAppDetails"]" name="search">
+            <input type="submit" value="Search" class="btn btn-primary">
+            <a asp-action="Archive" asp-controller="Home">View All Applications</a>
+        </div><br>
+    </p>
+    </form>
     @{
         if(Model.Count() > 0)
         {

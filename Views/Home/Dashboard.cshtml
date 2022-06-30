@@ -35,10 +35,10 @@
                         <p class="mb-0"><u>Next Interview Date and Time</u></p>
                             @if(app.Interviews.Count > 0)
                             {
-                                @if(app.Interviews.Last().IntDate !> DateTime.Today)
+                                @if(app.Interviews.First().IntDate > DateTime.Today)
                                 {
-                                <p style="text-align: center;" class="m-0">@app.Interviews.OrderBy(i => i.IntDate < DateTime.Now).First().Title</p>
-                                <p style="text-align: center;">@app.Interviews.OrderBy(i => i.IntDate < DateTime.Now).First().IntDate.ToString("MM/dd/yyyy hh:mm tt")</p>
+                                <p style="text-align: center;" class="m-0">@app.Interviews.OrderBy(i => i.IntDate > DateTime.Now).First().Title</p>
+                                <p style="text-align: center;">@app.Interviews.OrderBy(i => i.IntDate > DateTime.Now).First().IntDate.ToString("MM/dd/yyyy hh:mm tt")</p>
                                 }
                                 else
                                 {

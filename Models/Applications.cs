@@ -2,17 +2,19 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TrackMyApplication.Models;
+namespace HireMe.Models;
 
 public class Application
 {
     [Key]
     public int ApplicationId { get;set; }
-
+    
+    [Required]
     public string? BusinessName { get;set; }
 
     public string? Location { get;set; }
 
+    [Required]
     public string? JobTitle { get;set; }
 
     public string? Contact { get;set; }

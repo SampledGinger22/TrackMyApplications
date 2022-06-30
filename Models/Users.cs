@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TrackMyApplication.Models;
+namespace HireMe.Models;
 
 public class User 
 {

@@ -1,9 +1,9 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using TrackMyApplication.Models;
+using HireMe.Models;
 using Microsoft.AspNetCore.Identity;
 
-namespace TrackMyApplication.Controllers;
+namespace HireMe.Controllers;
 
 public class LoginController : Controller
 {

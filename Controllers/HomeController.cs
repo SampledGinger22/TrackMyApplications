@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using TrackMyApplication.Models;
+using HireMe.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace TrackMyApplication.Controllers;
+namespace HireMe.Controllers;
 
 public class HomeController : Controller
 {
@@ -42,7 +42,8 @@ public class HomeController : Controller
     [HttpGet("Applications/Interviews/ViewUpcoming")]
     public IActionResult Interviews()
     {
-        @ViewBag.insesh = true;
+        bool insesh = true;
+        @ViewBag.insesh = insesh;
         int? seshid = HttpContext.Session.GetInt32("userid");
 
         List<Interview> interviews = _context.Interviews.OrderByDescending(i => i.IntDate > DateTime.Now).Where(i => i.Application.UserId == seshid).ToList();
@@ -114,11 +115,21 @@ public class HomeController : Controller
         ViewBag.appDate = appDate;
 
 
-        List<Interview> pastInts = _context.Interviews.Where(i => i.IntDate < DateTime.Today && i.ApplicationId == id).ToList();
+        List<Interview> pastInts = _context.Interviews.Where(i => i.IntDate < DateTime.Now && i.ApplicationId == id).ToList();
         ViewBag.interviews = pastInts;
-        Interview? interview = _context.Interviews.Where(i => i.IntDate > DateTime.Today && i.ApplicationId == id).First();
-        ViewBag.NextIntId = interview.InterviewId;
-        ViewBag.nextInt = interview;
+        Interview? interview = _context.Interviews.Where(i => i.IntDate > DateTime.Now && i.ApplicationId == id).FirstOrDefault();
+        if(interview != null)
+        {
+            Interview nextInt = (Interview)interview;
+            ViewBag.NextIntId = nextInt.InterviewId;
+            ViewBag.nextInt = nextInt;
+        }
+        else
+        {
+            ViewBag.NextInt = null;
+            ViewBag.NextIntId = null;
+        }
+
         
         return View("ViewApp");
     }
@@ -209,7 +220,7 @@ public class HomeController : Controller
     }
 
     [HttpGet("Applications/View/Archive")]
-    public IActionResult Archive()
+    public IActionResult Archive(string search)
     {
         if(HttpContext.Session.GetInt32("userid") == null)
         {
@@ -222,6 +233,12 @@ public class HomeController : Controller
             .Include(a => a.Interviews)
             .Where(a => a.UserId == userid && a.Active == false)
             .ToList();
+
+        if(!String.IsNullOrEmpty(search))
+        {
+            List<Application> apps = _context.Applications.Where(x => x.BusinessName.ToLower().Contains(search.ToLower()) && x.UserId == userid && x.Active == false).ToList();
+            return View(apps);
+        }
 
         return View("Archive", Application);
     }
