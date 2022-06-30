@@ -1,0 +1,79 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+@model List<Application>
+<div class="content_body">
+    <h1 style="margin-bottom: 30px;">Archived Applications</h1>
+    @{
+        if(Model.Count() > 0)
+        {
+            @foreach(var app in Model)
+            {
+                <div class="info_div">
+                    <div class="mb-0 d-flex flex-row justify-content-between">
+                        <p>Date of Application: @app.AppDate.Value.Date.ToString("MM/dd/yyyy")</p>
+                        <p style="text-align: right; margin: 0;" >
+                            <form class="m-0 p-0" style="width: fitcontent;" asp-controller="Home" asp-action="UnArchiveApp" asp-route-id="@app.ApplicationId" method="POST" >
+                                <a asp-controller="Home" asp-action="ViewApp" asp-route-id="@app.ApplicationId">View Details</a> || 
+                                <button type="submit" style="color: #cc5500; border: none; background-color:white; padding: 0;"><u>Un-Archive</u></button>
+                            </form>
+                        </p>
+                        <p>                            
+                            <form style="width: fitcontent;" class="m-0 p-0" asp-controller="Home" asp-action="DeleteApp" asp-route-id="@app.ApplicationId" method="POST" >
+                                <button type="btn submit" class="btn-danger">Delete</button>
+                            </form>
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="info_div_row" style="align-items: center;">
+                        <p><u>Business Name:</u><br>@app.BusinessName<br><u>Job Title:</u><br>@app.JobTitle</p>
+                        <div class="d-flex flex-column justify-content-top">
+                        <p class="mb-0"><u>Next Interview Date and Time</u></p>
+                            @if(app.Interviews.Count > 0)
+                            {
+                                @if(app.Interviews.Last().IntDate > DateTime.Today)
+                                {
+                                <p style="text-align: center;">@app.Interviews.Last().IntDate.ToString("MM/dd/yyyy hh:mm tt")</p>
+                                }
+                                else
+                                {
+                                    <p style="text-align: center;">No New Interviews Scheduled</p>
+                                }
+                            }
+                            else
+                            {
+                                <p style="text-align: center;">No Interview Scheduled</p>
+                            }
+                        </div>
+                        <p><u>Main Contact:</u><br> @app.Contact<br>
+                        @if(@app.CPhone == null)
+                        {
+                            @app.CEmail
+                        }
+                        else
+                        {
+                            @app.CPhone
+                        }
+                        </p>
+                    </div>
+                    <div class="info_div_row" style="align-items: center;">
+                        <p class="mb-0"><u>Salary Range:</u><br> $@app.MinSalary.00 to $@app.MaxSalary.00</p>
+
+                        @* URL DOES NOT REDIRECT TO PAGE, TRIES TO REDIRECT INTERNALLY *@
+                        
+                        <a href="http://@app.JobURL" target="_blank">Job Description Link</a>
+
+                        <div class="notes_div">
+                            <label><u>Notes:</u></label><br>
+                            <p style="overflow-y: scroll hidden;">@app.Notes</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <p>No archived applications exist at this time.</p>
+        }
+    }
+</div>

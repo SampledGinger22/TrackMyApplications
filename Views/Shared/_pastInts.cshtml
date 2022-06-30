@@ -1,0 +1,28 @@
+@model List<Interview>
+
+
+<div class="d-flex flex-column justify-content-center">
+    <h3 style="text-align: center;"><u>Past Interviews</u></h3>
+    <table class="table">
+        <thead class="thead-dark">
+            <th>Description</th>
+            <th>Date & Time</th>
+            <th>Notes</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            @foreach(var one in Model)
+            {
+                if(one.IntDate < DateTime.Now)
+                {
+                    <tr>
+                        <td>@one.Title</td>
+                        <td>@one.IntDate.ToString("MM/dd/yyyy hh:mm tt")</td>
+                        <td>@one.Notes</td>
+                        <td><a style="color: red;" asp-controller="Home" asp-action="DeleteInt" asp-route-id="@one.InterviewId">Delete</a></td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,17 @@
+
+@model UserInLogin
+
+    <div class="d-flex flex-column justify-content-top">
+        <h1>Login</h1>
+        <div class="d-flex flex-column">
+            <form class="form-group" asp-controller="Login" asp-action="Access">
+                <span asp-validation-for="LoginUserName" style="color: red;"></span>
+                <label asp-for="LoginUserName">Username</label>
+                <input class="form-control" type="text" asp-for="LoginUserName">
+                <span asp-validation-for="LoginPassword" style="color: red;"></span>
+                <label asp-for="LoginPassword">Password</label>
+                <input class="form-control" type="password" asp-for="LoginPassword">
+                <button type="submit" class="btn btn-success mt-3">Sign In</button>
+            </form>
+        </div>
+    </div>

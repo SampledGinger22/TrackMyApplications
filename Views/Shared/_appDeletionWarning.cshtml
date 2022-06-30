@@ -1,0 +1,13 @@
+@model Application
+    
+    <div class="warningheader">
+        <div class="warning">
+            <h1 style="color: red; font-weight: bolder;">WARNING</h1>
+            <p style="font-weight: bolder;">You are about to delete a customer and all of its addresses, contacts, and projects. Are you sure you would like to proceed?</p>
+            <p style="font-weight: bolder;">THIS ACTION CANNOT BE UNDONE</p>
+            <div class="flex flex-row">
+                <button class="deletecommit" name="delete"><a asp-controller="Home" asp-action=""  style="color: red;">DELETE</a></button>
+                <button class="cancel" onclick="exit()" name="cancel" style="font-weight: bolder;">CANCEL</button>
+            </div>
+        </div>
+    </div>

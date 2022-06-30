@@ -1,0 +1,86 @@
+@model Application
+
+<form class="form-group newInt" asp-controller="Home" asp-action="UpdateAppCommit" asp-route-id="@ViewBag.appid">
+    <h1 style="text-align: center; margin-top: 50px;">Application: @Model.JobTitle for @Model.BusinessName</h1>
+    <div class="content_body">
+        <div class="content_body flex-row justify-content-between" style="gap: 20px;">
+            <div class="d-flex flex-column justify-content-top">
+                <label asp-for="BusinessName">Business Name:</label>
+                <input class="form-control" type="text" asp-for="BusinessName" value="@ViewBag.application.BusinessName"><br>
+                <label asp-for="JobTitle">Job Title:</label>
+                <input class="form-control" asp-for="JobTitle" type="text" value="@ViewBag.application.JobTitle"><br>
+                <label asp-for="JobURL">Job Listing URL:</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">http://</span>
+                    </div>
+                    <input type="text" class="form-control" asp-for="JobURL" value="@ViewBag.application.JobURL">
+                </div><br>
+                <label asp-for="AppDate">Application Date:</label>
+                <input class="form-control" type="date" asp-for="AppDate" value="@ViewBag.appDate">
+            </div>
+            <div class="d-flex flex-column justify-content-top">
+                <label asp-for="Contact">Main Contact Name:</label>
+                <input class="form-control" type="text" asp-for="Contact" value="@ViewBag.application.Contact"><br>
+                <label asp-for="CTitle">Contact Title:</label>
+                <input asp-for="CTitle" type="text" class="form-control" value="@ViewBag.application.CTitle"><br>
+                <label asp-for="CPhone">Contact Phone: </label>
+                <input class="form-control" type="tel" onkeydown="phoneNumberFormatter()" id="phone" asp-for="CPhone" value="@ViewBag.application.CPhone"><br>
+                <label asp-for="CEmail">Contact Email: </label>
+                <input class="form-control" type="email" asp-for="CEmail" value="@ViewBag.application.CEmail">
+            </div>
+            <div class="d-flex flex-column justify-content-top">
+                <label asp-for="MinSalary">Minimum Salary:</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                    </div>
+                    <input type="text" asp-for="MinSalary" class="form-control currency" value="@ViewBag.application.MinSalary">
+                    <div class="input-group-append">
+                        <span class="input-group-text">.00</span>
+                    </div>
+                </div><br>
+                <label asp-for="MaxSalary">Max Salary:</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                    </div>
+                    <input type="text" asp-for="MaxSalary" class="form-control" value="@ViewBag.application.MaxSalary">
+                    <div class="input-group-append">
+                        <span class="input-group-text">.00</span>
+                    </div>
+                </div><br>
+                <label asp-for="HourlyRate">Hourly Rate:</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                    </div>
+                    <input type="number" step=".01" max="999999999.99" asp-for="HourlyRate" class="form-control" value="@ViewBag.application.HourlyRate">
+                </div><br>
+                <label asp-for="Location">Job Location</label>
+                <input type="text" asp-for="Location" class="form-control" value="@ViewBag.application.Location"><br>
+            </div>
+        </div><br>
+        <div class="d-flex flex-row justify-content-center gap-4 mb-4">
+            <div class="d-flex flex-column justify-content-center" style="width: 40%;">
+                <label asp-for="AddContacts" style="font-size: 20px;">Additional Contacts:</label>
+                <textarea asp-for="AddContacts" cols="30" rows="10" style="overflow-y: scroll; width: 100%;">@Model.AddContacts</textarea>
+            </div><br>
+            <div class="d-flex flex-column justify-content-center" style="width: 40%;">
+                <label asp-for="Pros" style="font-size: 20px;">Job Pros:</label>
+                <textarea asp-for="Pros" cols="30" rows="10" style="overflow-y: scroll; width: 100%;">@Model.Pros</textarea>
+            </div>
+        </div>
+        <div class="d-flex flex-row justify-content-center gap-4">
+            <div class="d-flex flex-column justify-content-center" style="width: 40%;">
+                <label asp-for="Cons" style="font-size: 20px;">Job Cons:</label>
+                <textarea asp-for="Cons" cols="30" rows="10" style="overflow-y: scroll; width:100%;">@Model.Cons</textarea>
+            </div><br>
+            <div class="d-flex flex-column justify-content-center" style="width: 40%;">
+                <label asp-for="Notes" style="font-size: 20px;">Additional Notes</label>
+                <textarea asp-for="Notes" cols="30" rows="10" style="overflow-y: scroll; width: 100%;">@Model.Notes</textarea>
+            </div>
+        </div><br>
+        <button class="btn btn-dark" type="submit" style="width: 20%; margin-left: 40%; margin-bottom: 25px;">Update App</button>
+    </div>
+</form>

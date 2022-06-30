@@ -1,0 +1,33 @@
+@model Interview
+
+@if(Model != null)
+{
+    @if(Model.IntDate > DateTime.Now)
+    {
+    <div class="d-flex flex-column justify-content-center newInt" style="width: 100%; margin-top: 70px; margin-bottom: 40px; border: solid black 1px;">
+        <h2 style="text-align: center;">Your Next Interview</h2>
+        <form class="form-group" asp-controller="Home" asp-action="UpdateInterviewApp" asp-route-id="@Model.ApplicationId">
+            <div class="d-flex flex-row justify-content-around gap-5">
+                <div class="d-flex flex-column justify-content-center" style="width: 40%;">
+                    <label asp-for="Title">Description:</label>
+                    <span asp-validation-for="Title" style="color: red;"></span>
+                    <input asp-for="Title" type="text" class="form-control" value="@Model.Title">
+                </div>
+                <div class="d-flex flex-column justify-content-center" style="width: 40%;">
+                    <label asp-for="IntDate">Date & Time:</label>
+                    <span asp-validation-for="IntDate"></span>
+                    <input type="datetime-local" asp-for="IntDate" class="form-control" value="@Model.IntDate.ToString("yyyy-MM-ddThh:mm")">
+                </div>
+            </div>
+            <div class="d-flex flex-column justify-content-center">
+                <label asp-for="Notes">Notes:</label>
+                <textarea cols="30" rows="5" style="overflow-y: scroll;" asp-for="Notes">@Model.Notes</textarea><br>
+                <button type="submit" class="btn btn-dark" style="width: 30%; margin-left: 35%;">Update Interview</button>
+                <td><a style="color: red; text-align: center;" asp-controller="Home" asp-action="DeleteInt" asp-route-id="@ViewBag.nextInt.InterviewId">Delete</a></td>
+            </div>
+        </form>
+    </div>
+    }
+}
+
+

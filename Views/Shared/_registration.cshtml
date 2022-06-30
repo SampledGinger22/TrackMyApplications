@@ -1,0 +1,26 @@
+    
+    @model User
+
+    <div class="d-flex justify-content-center">
+        <form class="form-group d-flex flex-row justify-content-top gap-5" asp-controller="Login" asp-action="Register">
+            <div class="d-flex flex-column justify-content-left">
+                <h1>Register</h1>
+                <span asp-validation-for="FirstName" style="color: red;"></span>
+                <label asp-for="FirstName">First Name</label>
+                <input type="text" class="form-control" asp-for="FirstName">
+                <span asp-validation-for="LastName" style="color: red;"></span>
+                <label asp-for="LastName">Last Name</label>
+                <input type="text" class="form-control" asp-for="LastName">
+                <span asp-validation-for="UserName" style="color: red;"></span>
+                <label asp-for="UserName">Username</label>
+                <input type="text" class="form-control" asp-for="UserName">
+                <span asp-validation-for="Password" style="color: red;"></span>
+                <label asp-for="Password">Password</label>
+                <input type="password" class="form-control" asp-for="Password">
+                <span asp-validation-for="Confirm" style="color: red;"></span>
+                <label asp-for="Confirm">Confirm Password</label>
+                <input type="password" class="form-control" asp-for="Confirm">
+                <button type="submit" class="btn btn-success mt-3">Register</button>
+            </div>
+        </form>
+    </div>

@@ -1,0 +1,36 @@
+@{
+    ViewData["Title"] = "Interviews";
+}
+
+@model List<Interview>
+
+<div class="content_body">
+    <h1 style="text-align: center;">Getting Ready? Here Are Your Upcoming Interviews.</h1>
+    <table class="table">
+        <thead class="thead-dark">
+            <th>Description</th>
+            <th>Date & Time</th>
+            <th>Notes</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            @foreach(var one in Model)
+            {
+                if(one.IntDate > DateTime.Now)
+                {
+                    <tr>
+                        <td>@one.Title</td>
+                        <td>@one.IntDate.ToString("MM/dd/yyyy hh:mm tt")</td>
+                        <td>@one.Notes</td>
+                        <td>
+                           <p><a asp-controller="Home" asp-action="EditInterview" asp-route-id="@one.InterviewId">Edit</a>
+                            ||
+                            <a style="color: red;" asp-controller="Home" asp-action="DeleteInt" asp-route-id="@one.InterviewId"> Delete</a></p>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+</div>
