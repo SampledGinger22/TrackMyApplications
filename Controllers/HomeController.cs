@@ -30,6 +30,8 @@ public class HomeController : Controller
             .OrderByDescending(a => a.Interviews.All(i => i.IntDate > DateTime.Now))
             .ToList();
 
+        Console.WriteLine(Applications[0].ApplicationId);
+
         if(!String.IsNullOrEmpty(search))
         {
             List<Application> apps = _context.Applications.Where(x => x.BusinessName.ToLower().Contains(search.ToLower()) && x.UserId == userid && x.Active == true).ToList();
@@ -109,6 +111,8 @@ public class HomeController : Controller
         Application? application = _context.Applications
             .OrderBy(a => a.ApplicationId == id && a.UserId == userid).First();
         ViewBag.application = application;
+
+        Console.WriteLine(application.ApplicationId);
         
         ViewBag.appid = id;
         string appDate = application.AppDate.Value.Date.ToString("yyyy-MM-dd");
