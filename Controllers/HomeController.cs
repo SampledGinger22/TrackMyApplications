@@ -197,14 +197,14 @@ public class HomeController : Controller
         {
             return RedirectToAction("LoginandReg", "Login");
         }
-        Interview nextInt = _context.Interviews.OrderByDescending(i => i.ApplicationId == id).First();
+        Interview? nextInt = _context.Interviews.OrderByDescending(i => i.ApplicationId == id).FirstOrDefault();
         nextInt.Title = interview.Title;
         nextInt.IntDate = interview.IntDate;
         nextInt.Notes = interview.Notes;
 
         _context.Interviews.Update(nextInt);
         _context.SaveChanges();
-        return Redirect($"/Applications/View/{id}");
+        return Redirect($"/Applications/View/{nextInt.ApplicationId}");
     }
 
     [HttpPost("Applications/Interviews/{id}/Update/Commit")]
