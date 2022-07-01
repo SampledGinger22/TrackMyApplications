@@ -41,12 +41,17 @@
 
                         @* ACTIONS *@
 
-                        <form style="width: fitcontent;" asp-controller="Home" asp-action="ArchiveApp" asp-route-id="@app.ApplicationId" method="POST" >
-                            <p style="text-align: right; margin: 0;" >
+                        <p style="text-align: right; margin: 0;" >
+                            <form class="m-0 p-0" style="width: fitcontent;" asp-controller="Home" asp-action="UnArchiveApp" asp-route-id="@app.ApplicationId" method="POST" >
                                 <a asp-controller="Home" asp-action="ViewApp" asp-route-id="@app.ApplicationId">View Details</a> || 
-                                <button type="submit" style="color: #cc5500; border: none; background-color:white; padding: 0;"><u>Archive</u></button>
-                            </p>
-                        </form>
+                                <button type="submit" style="color: #cc5500; border: none; background-color:white; padding: 0;"><u>Un-Archive</u></button>
+                            </form>
+                        </p>
+                        <p>                            
+                            <form style="width: fitcontent;" class="m-0 p-0" asp-controller="Home" asp-action="DeleteApp" asp-route-id="@app.ApplicationId" method="POST" >
+                                <button type="btn submit" class="btn-danger">Delete</button>
+                            </form>
+                        </p>
                     </div>
 
                     <hr>
