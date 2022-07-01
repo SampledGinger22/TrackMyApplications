@@ -4,45 +4,71 @@
 @model List<Application>
 <div class="content_body">
     <h1 style="margin-bottom: 30px;">Archived Applications</h1>
+
+    @* SEARCH BAR *@
     <form class="form-group mt-0" asp-controller="Home" asp-action="Archive" method="get">
-    <p>
-        <div class="d-flex flex-row gap-2">
-            <input style="width: 35%;" type="search" class="form-control" placeholder="Search by Business Name" value="@ViewData["GetAppDetails"]" name="search">
-            <input type="submit" value="Search" class="btn btn-primary">
-            <a asp-action="Archive" asp-controller="Home">View All Applications</a>
-        </div><br>
-    </p>
+        <p>
+            <div class="d-flex flex-row gap-2">
+                <input style="width: 35%;" type="search" class="form-control" placeholder="Search by Business Name" value="@ViewData["GetAppDetails"]" name="search">
+                <input type="submit" value="Search" class="btn btn-primary">
+                <a asp-action="Dashboard" asp-controller="Home">View All Applications</a>
+            </div><br>
+        </p>
     </form>
     @{
-        if(Model.Count() > 0)
+        @if(Model.Count() > 0)
         {
             @foreach(var app in Model)
             {
+                @* MAIN CARD *@
+
                 <div class="info_div">
+                    
+                    @* INFO AND ACTION ROW *@
+
                     <div class="mb-0 d-flex flex-row justify-content-between">
-                        <p>Date of Application: @app.AppDate.Value.Date.ToString("MM/dd/yyyy")</p>
-                        <p style="text-align: right; margin: 0;" >
-                            <form class="m-0 p-0" style="width: fitcontent;" asp-controller="Home" asp-action="UnArchiveApp" asp-route-id="@app.ApplicationId" method="POST" >
+
+                        @* APPLICATION DATE *@
+
+                        @if(app.AppDate != null)
+                        {
+                            <p>Date of Application: @app.AppDate.Value.Date.ToString("MM/dd/yyyy")</p>
+                        }
+                        else
+                        {
+                            <p>Date of Application: N/A</p>
+                        }
+
+                        @* ACTIONS *@
+
+                        <form style="width: fitcontent;" asp-controller="Home" asp-action="ArchiveApp" asp-route-id="@app.ApplicationId" method="POST" >
+                            <p style="text-align: right; margin: 0;" >
                                 <a asp-controller="Home" asp-action="ViewApp" asp-route-id="@app.ApplicationId">View Details</a> || 
-                                <button type="submit" style="color: #cc5500; border: none; background-color:white; padding: 0;"><u>Un-Archive</u></button>
-                            </form>
-                        </p>
-                        <p>                            
-                            <form style="width: fitcontent;" class="m-0 p-0" asp-controller="Home" asp-action="DeleteApp" asp-route-id="@app.ApplicationId" method="POST" >
-                                <button type="btn submit" class="btn-danger">Delete</button>
-                            </form>
-                        </p>
+                                <button type="submit" style="color: #cc5500; border: none; background-color:white; padding: 0;"><u>Archive</u></button>
+                            </p>
+                        </form>
                     </div>
+
                     <hr>
+
+                    @* TOP DATA ROW *@
+
                     <div class="info_div_row" style="align-items: center;">
+
+                        @* BUSINESS NAME *@
+
                         <p><u>Business Name:</u><br>@app.BusinessName<br><u>Job Title:</u><br>@app.JobTitle</p>
+
+                        @* NEXT INTERVIEW *@
+
                         <div class="d-flex flex-column justify-content-top">
-                        <p class="mb-0"><u>Next Interview Date and Time</u></p>
+                            <p class="mb-0"><u>Next Interview Date and Time</u></p>
                             @if(app.Interviews.Count > 0)
                             {
-                                @if(app.Interviews.Last().IntDate > DateTime.Today)
+                                @if(app.Interviews.FirstOrDefault().IntDate > DateTime.Today)
                                 {
-                                <p style="text-align: center;">@app.Interviews.Last().IntDate.ToString("MM/dd/yyyy hh:mm tt")</p>
+                                <p style="text-align: center;" class="m-0">@app.Interviews.OrderBy(i => i.IntDate > DateTime.Now).FirstOrDefault().Title</p>
+                                <p style="text-align: center;">@app.Interviews.OrderBy(i => i.IntDate > DateTime.Now).FirstOrDefault().IntDate.ToString("MM/dd/yyyy hh:mm tt")</p>
                                 }
                                 else
                                 {
@@ -54,27 +80,88 @@
                                 <p style="text-align: center;">No Interview Scheduled</p>
                             }
                         </div>
-                        <p><u>Main Contact:</u><br> @app.Contact<br>
-                        @if(@app.CPhone == null)
+
+                        @* MAIN CONTACT *@
+
+                        <div class="d-flex flex-column justify-content-center">
+                            <p>
+                            @if(app.Contact != null)
+                            {
+                                <u>Main Contact:</u><br> @app.Contact<br>
+                                @if(@app.CPhone == null)
+                                {
+                                    @if(app.CEmail != null)
+                                        {
+                                            @app.CEmail
+                                        }
+                                        else
+                                        {
+                                            <p>No Contact Info</p>
+                                        }
+                                }
+                                else
+                                {
+                                    @app.CPhone
+                                }
+                            }
+                            else
+                            {
+                                <p><u>Main Contact:</u><br> N/A</p>
+                            }
+                            </p>
+                        </div>
+                    </div>
+
+                    @* SECOND DATA ROW *@
+
+                    <div class="info_div_row" style="align-items: center;">
+                        
+                        @* SALARY RANGE *@
+                        <p class="mb-0">
+                        @if(app.MaxSalary != null && app.MinSalary != null)
                         {
-                            @app.CEmail
+                            <p><u>Salary Range:</u><br> $@app.MinSalary.00 to $@app.MaxSalary.00</p>
+                        }
+                        else if(app.MaxSalary != null && app.MinSalary == null)
+                        {
+                            <p class="mb-0"><u>Salary</u><br> $@app.MaxSalary.00</p>
+                        }
+                        else if(app.MaxSalary == null && app.MinSalary != null)
+                        {
+                            <p class="mb-0"><u>Salary</u><br> $@app.MinSalary.00</p>
                         }
                         else
                         {
-                            @app.CPhone
+                            <p class="mb-0"><u>Salary:</u><br> No Salary Data Avaliable</p>
+                        }
+
+                        @* JOB LINK *@
+
+                        @if(app.JobURL != null)
+                        {
+                            <a href="http://@app.JobURL" target="_blank">Job Description Link</a>
+                        }
+                        else
+                        {
+                            <p>No Job Link Recorded</p>
                         }
                         </p>
-                    </div>
-                    <div class="info_div_row" style="align-items: center;">
-                        <p class="mb-0"><u>Salary Range:</u><br> $@app.MinSalary.00 to $@app.MaxSalary.00</p>
 
-                        @* URL DOES NOT REDIRECT TO PAGE, TRIES TO REDIRECT INTERNALLY *@
-                        
-                        <a href="http://@app.JobURL" target="_blank">Job Description Link</a>
+
+                        @* NOTES *@
 
                         <div class="notes_div">
                             <label><u>Notes:</u></label><br>
-                            <p style="overflow-y: scroll hidden;">@app.Notes</p>
+                            <p style="overflow-y: scroll hidden;">
+                                @if(app.Notes != null)
+                                {
+                                    @app.Notes
+                                }
+                                else
+                                {
+                                    <p>No Notes</p>
+                                }
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -82,7 +169,8 @@
         }
         else
         {
-            <p>No archived applications exist at this time.</p>
+            <a asp-controller="Home" asp-action="NewApp">Create a New Application</a>
         }
     }
+
 </div>
