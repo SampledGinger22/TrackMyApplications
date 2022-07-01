@@ -108,7 +108,7 @@ public class HomeController : Controller
         ViewBag.insesh = insesh;
         int? userid = HttpContext.Session.GetInt32("userid");
         Application? application = _context.Applications
-            .OrderBy(a => a.ApplicationId == id && a.UserId == userid).First();
+            .Where(a => a.ApplicationId == id && a.UserId == userid).FirstOrDefault();
         ViewBag.application = application;
 
         Console.WriteLine(application.ApplicationId);
