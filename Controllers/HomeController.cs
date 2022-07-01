@@ -30,7 +30,6 @@ public class HomeController : Controller
             .OrderByDescending(a => a.Interviews.All(i => i.IntDate > DateTime.Now))
             .ToList();
 
-        Console.WriteLine(Applications[0].ApplicationId);
 
         if(!String.IsNullOrEmpty(search))
         {
