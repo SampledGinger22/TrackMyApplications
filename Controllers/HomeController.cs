@@ -105,8 +105,9 @@ public class HomeController : Controller
         }
         bool insesh = true;
         ViewBag.insesh = insesh;
+        int? userid = HttpContext.Session.GetInt32("userid");
         Application? application = _context.Applications
-            .OrderBy(a => a.ApplicationId == id).First();
+            .OrderBy(a => a.ApplicationId == id && a.UserId == userid).First();
         ViewBag.application = application;
         
         ViewBag.appid = id;
@@ -141,8 +142,9 @@ public class HomeController : Controller
         {
             return RedirectToAction("LoginandReg", "Login");
         }
+        int? userid = HttpContext.Session.GetInt32("userid");
 
-        Application application = _context.Applications.OrderBy(a => a.ApplicationId == app.ApplicationId).First();
+        Application application = _context.Applications.OrderBy(a => a.ApplicationId == app.ApplicationId && a.UserId == userid).First();
 
         application.BusinessName = app.BusinessName;
         application.Location = app.Location;
@@ -250,7 +252,9 @@ public class HomeController : Controller
         {
             return RedirectToAction("LoginandReg", "Login");
         }
-        Application? Application = _context.Applications.FirstOrDefault(a => a.ApplicationId == id);
+
+        int? userid = HttpContext.Session.GetInt32("userid");
+        Application? Application = _context.Applications.FirstOrDefault(a => a.ApplicationId == id && a.UserId == userid);
         Application.Active = false;
         // _context.Applications.Add(Application);
         _context.SaveChanges();
@@ -264,7 +268,8 @@ public class HomeController : Controller
         {
             return RedirectToAction("LoginandReg", "Login");
         }
-        List<Application> Application = _context.Applications.Where(a => a.ApplicationId == id).ToList();
+        int? userid = HttpContext.Session.GetInt32("userid");
+        List<Application> Application = _context.Applications.Where(a => a.ApplicationId == id && a.UserId == userid).ToList();
         Application? App = Application.FirstOrDefault();
         App.Active = true;
         _context.SaveChanges();
@@ -278,12 +283,13 @@ public class HomeController : Controller
         {
             return RedirectToAction("LoginandReg", "Login");
         }
+        int? userid = HttpContext.Session.GetInt32("userid");
         List<Interview> interviews = _context.Interviews.Where(i => i.ApplicationId == id).ToList();
         foreach(var interview in interviews)
         {
             _context.Interviews.Remove(interview);
         }
-        Application application = _context.Applications.Where(a => a.ApplicationId == id).First();
+        Application application = _context.Applications.Where(a => a.ApplicationId == id && a.UserId == userid).First();
         _context.Applications.Remove(application);
         _context.SaveChanges();
         return RedirectToAction("Archive");
