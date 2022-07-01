@@ -35,6 +35,7 @@ namespace HireMe.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("BusinessName")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("CEmail")
@@ -59,6 +60,7 @@ namespace HireMe.Migrations
                         .HasColumnType("double");
 
                     b.Property<string>("JobTitle")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("JobURL")
