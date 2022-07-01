@@ -114,7 +114,7 @@ public class HomeController : Controller
 
         Console.WriteLine(application.ApplicationId);
         
-        ViewBag.appid = id;
+        ViewBag.appid = application.ApplicationId;
         string appDate = application.AppDate.Value.Date.ToString("yyyy-MM-dd");
 
         ViewBag.appDate = appDate;
