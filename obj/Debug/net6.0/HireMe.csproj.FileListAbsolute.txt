@@ -33,38 +33,3 @@ C:\Users\admin\PRIVATE DEV PROJECTS\TrackMyApplication\obj\Debug\net6.0\refint\T
 C:\Users\admin\PRIVATE DEV PROJECTS\TrackMyApplication\obj\Debug\net6.0\TrackMyApplication.pdb
 C:\Users\admin\PRIVATE DEV PROJECTS\TrackMyApplication\obj\Debug\net6.0\TrackMyApplication.genruntimeconfig.cache
 C:\Users\admin\PRIVATE DEV PROJECTS\TrackMyApplication\obj\Debug\net6.0\ref\TrackMyApplication.dll
-C:\Users\admin\TrackMyApplications\bin\Debug\net6.0\appsettings.Development.json
-C:\Users\admin\TrackMyApplications\bin\Debug\net6.0\appsettings.json
-C:\Users\admin\TrackMyApplications\bin\Debug\net6.0\HireMe.staticwebassets.runtime.json
-C:\Users\admin\TrackMyApplications\bin\Debug\net6.0\HireMe.exe
-C:\Users\admin\TrackMyApplications\bin\Debug\net6.0\HireMe.deps.json
-C:\Users\admin\TrackMyApplications\bin\Debug\net6.0\HireMe.runtimeconfig.json
-C:\Users\admin\TrackMyApplications\bin\Debug\net6.0\HireMe.dll
-C:\Users\admin\TrackMyApplications\bin\Debug\net6.0\HireMe.pdb
-C:\Users\admin\TrackMyApplications\bin\Debug\net6.0\Humanizer.dll
-C:\Users\admin\TrackMyApplications\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
-C:\Users\admin\TrackMyApplications\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\admin\TrackMyApplications\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
-C:\Users\admin\TrackMyApplications\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\admin\TrackMyApplications\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\admin\TrackMyApplications\bin\Debug\net6.0\MySqlConnector.dll
-C:\Users\admin\TrackMyApplications\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
-C:\Users\admin\TrackMyApplications\obj\Debug\net6.0\HireMe.csproj.AssemblyReference.cache
-C:\Users\admin\TrackMyApplications\obj\Debug\net6.0\HireMe.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\admin\TrackMyApplications\obj\Debug\net6.0\HireMe.AssemblyInfoInputs.cache
-C:\Users\admin\TrackMyApplications\obj\Debug\net6.0\HireMe.AssemblyInfo.cs
-C:\Users\admin\TrackMyApplications\obj\Debug\net6.0\HireMe.csproj.CoreCompileInputs.cache
-C:\Users\admin\TrackMyApplications\obj\Debug\net6.0\HireMe.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\admin\TrackMyApplications\obj\Debug\net6.0\HireMe.RazorAssemblyInfo.cache
-C:\Users\admin\TrackMyApplications\obj\Debug\net6.0\HireMe.RazorAssemblyInfo.cs
-C:\Users\admin\TrackMyApplications\obj\Debug\net6.0\staticwebassets.build.json
-C:\Users\admin\TrackMyApplications\obj\Debug\net6.0\staticwebassets.development.json
-C:\Users\admin\TrackMyApplications\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
-C:\Users\admin\TrackMyApplications\obj\Debug\net6.0\scopedcss\bundle\HireMe.styles.css
-C:\Users\admin\TrackMyApplications\obj\Debug\net6.0\scopedcss\projectbundle\HireMe.bundle.scp.css
-C:\Users\admin\TrackMyApplications\obj\Debug\net6.0\HireMe.csproj.CopyComplete
-C:\Users\admin\TrackMyApplications\obj\Debug\net6.0\HireMe.dll
-C:\Users\admin\TrackMyApplications\obj\Debug\net6.0\refint\HireMe.dll
-C:\Users\admin\TrackMyApplications\obj\Debug\net6.0\HireMe.pdb
-C:\Users\admin\TrackMyApplications\obj\Debug\net6.0\HireMe.genruntimeconfig.cache
-C:\Users\admin\TrackMyApplications\obj\Debug\net6.0\ref\HireMe.dll
